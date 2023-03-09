@@ -17,7 +17,7 @@ function validarNombre(nombre) {
 
 function validarCiudad(ciudad) {
     if (ciudad.length === 0) {
-        return "Este campo debe tener al menos 1 caracter";
+        return "El campo ciudad no puede estar vacío";
     } else {
         return "";
     }
@@ -25,7 +25,9 @@ function validarCiudad(ciudad) {
 
 function validarDescripcionRegalo(descripcionRegalo) {
     if (descripcionRegalo.length === 0) {
-        return "Este campo debe tener al menos 1 caracter";
+        return "El campo descripción no puede estar vacío";
+    } else if (descripcionRegalo.length >= 100) {
+        return "El campo descripción es demasiado largo";
     } else {
         return "";
     }
