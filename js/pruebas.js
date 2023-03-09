@@ -13,3 +13,23 @@ function probarValidarNombre() {
 }
 
 probarValidarNombre();
+
+
+function probarValidarCiudad() {
+    console.assert(
+        validarCiudad('') === "Este campo debe tener al menos 1 caracter",
+        "Validar ciudad no validó que la ciudad no sea un campo vacío",
+    );
+}
+
+probarValidarCiudad();
+
+
+function probarValidarDescripcionRegalo() {
+    console.assert(
+        validarDescripcionRegalo('') === "Este campo debe tener al menos 1 caracter",
+        "Validar descripción regalo no validó que la descripción no sea un campo vacío",
+    )
+}
+
+probarValidarDescripcionRegalo();
