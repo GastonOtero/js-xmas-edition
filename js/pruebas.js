@@ -53,6 +53,11 @@ function probarValidarDescripcionRegalo() {
     );
 
     console.assert(
+        validarDescripcionRegalo('..,,') === "El campo descripción sólo puede contener letras y números",
+        "Validar descripción no validó que sólo contenga letras y números",
+    );
+
+    console.assert(
         validarDescripcionRegalo('un regalo muy lindo') ===  "", 
         "Validar descripción no funcionó con una descripción válida",
     )

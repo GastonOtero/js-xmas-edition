@@ -5,6 +5,7 @@ const ciudad = $form.ciudad.value;
 const comportamiento = $form.comportamiento.value;
 const descripcionRegalo = $form['descripcion-regalo'].value;
 
+
 function validarNombre(nombre) {
     if (nombre.length === 0) {
         return "Este campo debe tener al menos 1 caracter";
@@ -30,6 +31,8 @@ function validarDescripcionRegalo(descripcionRegalo) {
         return "El campo descripción no puede estar vacío";
     } else if (descripcionRegalo.length >= 100) {
         return "El campo descripción es demasiado largo";
+    } else if (!/^[A-z0-9]/.test(descripcionRegalo)) {
+        return "El campo descripción sólo puede contener letras y números"
     } else {
         return "";
     }
