@@ -59,13 +59,24 @@ function validarFormulario(event){
 
 function manejarErrores(errores) {
     const keys = Object.keys(errores);
+    const $errores = document.querySelector("#errores");
+
+    const cantidadErrores = 0;
 
     keys.forEach(function(key){ 
         const error = errores[key];
         
         if (error) {
+            cantidadErrores++;
+
             $form[key].className = "error";
+
+            const $error = document.createElement("div");
+            $error.innerText = error;
+            $errores.appendChild($error);
+
         } else {
+            $error.remove();
             $form[key].className = "";
         };
     });
