@@ -88,6 +88,12 @@ function manejarErrores(errores) {
     if (cantidadErrores === 0) {
         document.querySelector("#exito").className = "";
         document.querySelector("#carta-a-santa").className = "oculto";
+
+        setTimeout(irAWishlist, 5000);
+        
+        function irAWishlist() {   
+            document.location.href = "wishlist.html";
+        };
     }
 
     return cantidadErrores;
