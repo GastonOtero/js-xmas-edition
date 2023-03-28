@@ -63,6 +63,10 @@ function manejarErrores(errores) {
 
     let cantidadErrores = 0;
 
+    while ($errores.firstChild) {
+        $errores.removeChild($errores.firstChild);
+    }
+
     keys.forEach(function(key){ 
         const error = errores[key];
         
@@ -71,15 +75,17 @@ function manejarErrores(errores) {
 
             $form[key].className = "error";
 
-            let $error = document.createElement("div");
+            let $error = document.createElement("li");
             $error.innerText = error;
             $errores.appendChild($error);
 
         } else {
             $form[key].className = "";
         };
+
     });
-    event.preventDefault();
+    
+    return cantidadErrores;
 }
 
 const $form = document.querySelector("#carta-a-santa");
