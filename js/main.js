@@ -85,8 +85,15 @@ function manejarErrores(errores) {
 
     });
     
+    if (cantidadErrores === 0) {
+        document.querySelector("#exito").className = "";
+        document.querySelector("#carta-a-santa").className = "oculto";
+    }
+
     return cantidadErrores;
 }
+
+
 
 const $form = document.querySelector("#carta-a-santa");
 $form.onsubmit = validarFormulario;
